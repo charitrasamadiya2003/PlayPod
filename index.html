@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlayPod – Feel the Music</title>
+    <link rel="icon" type="image/png" href="PlayPod.png" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- AUTH -->
+    <script src="auth.js"></script>
+    <script>
+      protectPlayPod();
+    </script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="PlayPod.png" alt="PlayPod Logo" />
+        <span>PlayPod</span>
+      </div>
+
+      <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+
+      <div class="navRight">
+        <button id="themeToggle">🌙</button>
+        <button onclick="playpodLogout()" class="logoutBtn">Logout</button>
+      </div>
+    </nav>
+
+    <main class="container">
+      <h1>Your Library</h1>
+
+      <input
+        type="text"
+        id="search"
+        placeholder="Search songs..."
+        class="searchBox"
+      />
+
+      <h3 class="sectionTitle">Recently Played</h3>
+      <div class="recentList"></div>
+
+      <h3 class="sectionTitle">All Songs</h3>
+      <div class="songList"></div>
+    </main>
+
+    <footer class="player">
+      <input type="range" id="progressBar" value="0" />
+
+      <div class="controls">
+        <i id="prev" class="fas fa-backward"></i>
+        <i id="play" class="fas fa-play-circle"></i>
+        <i id="next" class="fas fa-forward"></i>
+      </div>
+
+      <div class="songInfo">
+        <div class="songText">
+          <span id="currentSong">Select a song</span>
+          <span id="time">00:00 / 00:00</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/26504e4a1f.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

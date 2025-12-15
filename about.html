@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About – PlayPod</title>
+    <link rel="icon" type="image/png" href="PlayPod.png" />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="auth.js"></script>
+    <script>
+      protectPlayPod();
+    </script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="PlayPod.png" alt="PlayPod Logo" />
+        <span>PlayPod</span>
+      </div>
+
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="about.html">About</a></li>
+      </ul>
+
+      <div class="navRight">
+        <button id="themeToggle">🌙</button>
+        <button onclick="playpodLogout()" class="logoutBtn">Logout</button>
+      </div>
+    </nav>
+
+    <section class="about">
+      <h1>About PlayPod</h1>
+
+      <p>
+        PlayPod is a frontend-only music application built using
+        <strong>HTML, CSS, and JavaScript</strong> . It’s a personal space
+        shaped around listening—simple, focused, and intentionally
+        distraction-free.
+      </p>
+      <blockquote>
+        “Music is emotion. Code is structure. PlayPod is where they meet.”
+      </blockquote>
+
+      <p class="note">
+        Created for late nights, quiet moments, and songs that stay longer than
+        words.
+      </p>
+
+      <p class="author">- Charitra Samadiya</p>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
