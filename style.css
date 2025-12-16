@@ -23,7 +23,7 @@ body.light {
   font-family: "Poppins", sans-serif;
 }
 
-/* 🌌 BACKGROUND IMAGE */
+/* 🌌 BACKGROUND */
 body {
   min-height: 100vh;
   background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)),
@@ -31,11 +31,15 @@ body {
   color: var(--text);
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 14px;
   padding: 18px 40px;
   background: rgba(2, 6, 23, 0.85);
   backdrop-filter: blur(8px);
@@ -58,16 +62,25 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 20px;
 }
 
 nav a {
   text-decoration: none;
   color: var(--muted);
+  padding: 6px 8px;
 }
 
 nav a.active {
   color: var(--accent);
+}
+
+/* RIGHT SIDE (🌙 + Logout) */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 #themeToggle {
@@ -75,9 +88,17 @@ nav a.active {
   border: none;
   font-size: 20px;
   cursor: pointer;
+  color: var(--text);
 }
 
-/* MAIN */
+.logoutBtn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= MAIN ================= */
 .container {
   padding: 40px;
   padding-bottom: 200px;
@@ -87,7 +108,7 @@ nav a.active {
   margin-bottom: 20px;
 }
 
-/* SONG LIST */
+/* ================= SONG LIST ================= */
 .songItem {
   display: flex;
   align-items: center;
@@ -135,7 +156,7 @@ nav a.active {
   transform: scale(1.2);
 }
 
-/* PLAYER */
+/* ================= PLAYER ================= */
 .player {
   position: fixed;
   bottom: 0;
@@ -160,7 +181,7 @@ nav a.active {
   cursor: pointer;
 }
 
-/* CENTERED SONG INFO */
+/* SONG INFO */
 .songInfo {
   display: flex;
   justify-content: center;
@@ -185,7 +206,7 @@ nav a.active {
   transition: opacity 0.5s;
 }
 
-/* ABOUT PAGE */
+/* ================= ABOUT ================= */
 .about {
   padding: 60px;
   max-width: 800px;
@@ -198,15 +219,13 @@ nav a.active {
   color: var(--accent);
 }
 
-.about .note {
-  margin-top: 20px;
-  color: var(--muted);
-}
+.about .note,
 .about .author {
   margin-top: 5px;
   color: var(--muted);
 }
 
+/* ================= LOGIN ================= */
 .login-page {
   min-height: 100vh;
   display: flex;
@@ -217,24 +236,22 @@ nav a.active {
 }
 
 .login-page input {
-  padding: 10px;
-  width: 240px;
+  padding: 12px;
+  width: 260px;
   border-radius: 8px;
   border: none;
+  font-size: 16px;
 }
 
 .login-page button {
-  padding: 10px 30px;
+  padding: 12px 34px;
   border-radius: 8px;
   border: none;
   background: var(--accent);
   cursor: pointer;
 }
 
-.logoutBtn {
-  margin-left: 10px;
-}
-
+/* ================= SEARCH ================= */
 .searchBox {
   padding: 10px;
   width: 260px;
@@ -250,4 +267,38 @@ nav a.active {
   margin-top: 20px;
   font-size: 13px;
   opacity: 0.6;
+}
+
+/* ================= MOBILE FIXES ================= */
+@media (max-width: 600px) {
+  nav {
+    padding: 12px 14px;
+  }
+
+  .logo {
+    font-size: 17px;
+    gap: 6px;
+  }
+
+  .logo img {
+    width: 32px;
+    height: 32px;
+  }
+
+  nav ul {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 4px 6px;
+  }
+
+  #themeToggle {
+    font-size: 18px;
+  }
+
+  .container {
+    padding: 20px;
+  }
 }
